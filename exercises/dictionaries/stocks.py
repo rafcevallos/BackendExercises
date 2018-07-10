@@ -16,7 +16,8 @@
 stockDict = {
     'GM': 'General Motors',
     'CAT': 'Caterpillar',
-    'EK': "Eastman Kodak"
+    'EK': "Eastman Kodak",
+    'PP': "Poopy Poo"
 }
 
 # List of tuples
@@ -24,19 +25,21 @@ purchases = [
     ('GM', 100, '10-sep-2001', 48),
     ('CAT', 100, '1-apr-1999', 24),
     ('EK', 200, '1-jul-1998', 56),
-    ("GM", 150, '27-jan-2018', 100)
+    ('GM', 150, '27-jan-2018', 100),
+    ('PP', 500, '3-may-2017', 500)
 ]
 
 # Purchase History Report
 for stock in purchases:
-    purchasedStocks = str(stock[1]) + " stocks of " + stockDict[stock[0]] + " cost us " + "$"+str((stock[1])*(stock[3]))
-    print("Stock info: ", purchasedStocks)
+    purchased_stocks = str(stock[1]) + " stocks of " + stockDict[stock[0]] + " cost us " + "$"+str((stock[1])*(stock[3]))
+    print("Stock info: ", purchased_stocks)
 
 
 # Create a second purchase summary that which accumulates total investment by ticker symbol. In the above sample data, there are two blocks of GE. These can easily be combined by creating a dict where the key is the ticker and the value is the list of blocks purchased. The program makes one pass through the data to create the dict. A pass through the dict can then create a report showing each ticker symbol and all blocks of stock.
 
 # total_investment is an empty dictionary that will hold the key: value pairs in stockDict
-total_investment = dict((key, 0) for key in stockDict.keys())
+total_investment = {}
+total_investment = dict((ticker, 0) for ticker in stockDict.keys())
 print(total_investment)
 # loop through purchases
 for stock in purchases:
