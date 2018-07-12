@@ -28,13 +28,15 @@ with open("data/names.txt", "w") as names:
 # nicklist = []
 with open("data/names.txt", "r") as names:
     namelist = names.readlines()
-    # print(namelist)
+    print(namelist)
 
 with open("data/nicknames.txt", "r") as nicks:
     nicklist = nicks.readlines()
-    # print(nicklist)
+    print(nicklist)
 
 # Handsome Jake related
+# jake_names = [f"{name.strip().split(' ')[0]} \"{nicklist[i].strip()}\" {name.strip().split(' ')[1]}" for i, name in enumerate(namelist)]
+
 jake_names = [f"{name.strip().split(' ')[0]} \"{nicklist[i].strip()}\" {name.strip().split(' ')[1]}" for i, name in enumerate(namelist)]
 
 print(jake_names)
@@ -45,4 +47,4 @@ print(jake_names)
 # part of = COMPOSITION (THiS = FLEXIBILITY)
 # has-a = AGGREGATION
 
-#favor COMPOSITION over INHERITANCE/AGGREGATIOn because you want your data to be flexible instead of rigid.  It allows programmers to change what needs to be changed instead of the entire dataset
+#favor COMPOSITION over INHERITANCE/AGGREGATION because you want your data to be flexible instead of rigid.  It allows programmers to change what needs to be changed instead of the entire dataset
