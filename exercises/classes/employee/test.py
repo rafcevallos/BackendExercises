@@ -72,3 +72,55 @@ class Employee():
 
     def __str__(self):
         return self.employee_name
+
+
+class Company():
+    """This represents a company in which people work"""
+
+    def __init__(self, company_name, date_founded):
+        self.company_name = company_name
+        self.date_founded = date_founded
+
+        self.employees = set() #declaring an empty set
+
+    def get_company_name(self):
+        """Returns the name of the company"""
+
+        return self.company_name
+
+    def get_date_founded(self):
+        """Returns the date founded of the company"""
+
+        return self.date_founded
+
+    def employee_list(self):
+        employee_group = ""
+        for e in self.employees:
+            employee_group += {e.employee_name}
+
+        return employee_group
+
+    # def __str__(self): #str method always needs to be part of the class -- how to format
+    #     employee_list = ""
+    #     for e in self.employees:
+    #         employee_list += {e.employee_name}
+    #     return (f"{self.company_name}, {employee_list}")
+
+
+if __name__ == '__main__':
+    # Create a Company
+    ThePoopStore = Company("The Poop Store", "7/17/77")
+
+    # Create some EMPLOYEES
+    raf = Employee("Raf", "Pooper Scooper", "01/27/2018")
+    meghan = Employee("Meghan", "Sharking", "02/01/2018")
+    deanna = Employee("Deanne", "Guru'ing", "5/15/2017")
+    erin = Employee("Erin", "Food", "08/29/2016")
+
+    # Add EMPLOYEES into the AGGREGATE instance variable of the COMPANY
+    ThePoopStore.employees.add(raf)
+    ThePoopStore.employees.add(meghan)
+    ThePoopStore.employees.add(deanna)
+    ThePoopStore.employees.add(erin)
+
+print(str(raf))
