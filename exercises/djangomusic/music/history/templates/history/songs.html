@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'history/style.css' %}" />
+
 <h1>{{ artist.artist_name }}</h1>
 <ul>
     {% for songs in artist.songs_set.all %}
