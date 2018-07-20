@@ -81,3 +81,24 @@ FROM Song -- Result is 'THUG'
 SELECT MAX(SongLength) AS "Song Length", Song.Title AS "Song", Album.Title
 FROM Song -- Result is 'THUG'
 LEFT JOIN Album ON Song.AlbumId = Album.AlbumId
+
+
+
+INSERT INTO Superhero (Name, Gender, Secret_Id, Affiliation_Id)
+SELECT
+(null, "Captain America", "M", "Steve Rogers", Affiliation.Affiliation_Id),
+(null, "Black Widow", "F", "Natasha Romanoff", Affiliation.Affiliation_Id),
+(null, "Captain Marvel", "F", "Carol Danvers", Affiliation.Affiliation_Id),
+(null, "Hulk", "M", "Bruce Banner", Affiliation.Affiliation_Id),
+(null, "Doctor Strange", "M", "Stephen Strange", Affiliation.Affiliation_Id),
+(null, "Falcon", "M", "Sam Wilson", Affiliation.Affiliation_Id),
+(null, "Scarlet Witch", "F", "Wanda Maximoff", Affiliation.Affiliation_Id),
+(null, "Hawkeye", "M", "Clint Barton", Affiliation.Affiliation_Id),
+(null, "Thor", "M", "God of Thunder", Affiliation.Affiliation_Id),
+(null, "Ant Man", "M", "Scott Lang", Affiliation.Affiliation_Id),
+(null, "Vision", "M", "The Vision", Affiliation.Affiliation_Id),
+(null, "War Machine", "M", "James Rhodes", Affiliation.Affiliation_Id),
+(null, "Black Panther", "M", "T'Challa", Affiliation.Affiliation_Id),
+(null, "Winter Soldier", "M", "Bucky Barnes", Affiliation.Affiliation_Id)
+FROM Affiliation
+WHERE Affiliation.Name = "The Avengers"

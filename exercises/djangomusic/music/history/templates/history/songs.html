@@ -1,10 +1,12 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'history/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'history/songs.css' %}" />
 
+<body class = "artist_kendrick, artist_radiohead artist_jronk">
 <h1>{{ artist.artist_name }}</h1>
 <ul>
     {% for songs in artist.songs_set.all %}
     <li>{{ songs.song_text }}</li>
     {% endfor %}
 </ul>
+</body>

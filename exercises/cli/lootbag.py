@@ -13,3 +13,11 @@ class LootBag:
 
     def add_toy_to_bag(self, toy, child):
         return "Toy added to bag."
+
+    def remove_toy_from_bag(self, toy, child):
+        return "Toy removed from bag."
+
+    def get_kids(self):
+        return ['Raffy']
+
+    def

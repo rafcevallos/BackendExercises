@@ -1,4 +1,23 @@
 body {
-    background-color: pink;
-    background: white url("images/background.gif") no-repeat;
+    background: white url("images/musictrip.gif") no-repeat center center fixed;
+    /* background-size: cover; */
+}
+
+h1 {
+    color: yellow;
+    max-width: 11%;
+    border: 5px solid pink;
+    border-radius: 12px;
+    padding: 2px;
+}
+ul {
+    background-color: whitesmoke;
+    width: 12%;
+    border-radius: 12px;
+    border: 5px solid orangered;
+}
+
+li {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
 }
