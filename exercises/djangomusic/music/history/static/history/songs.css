@@ -1,19 +1,19 @@
 body {
     background-color: pink;
-    /* background: white url("images/kendrick.gif") no-repeat center center fixed; */
-}
-
-.artist_kendrick {
     background: white url("images/kendrick.gif") no-repeat center center fixed;
 }
 
-.artist_jronk {
+/* .kendrick-artist {
+    background: white url("images/kendrick.gif") no-repeat center center fixed;
+}
+
+.jronk-artist {
     background: white url("images/jronk.gif") no-repeat center center fixed;
 }
 
-.artist_radiohead {
+.radiohead-artist{
     background: white url("images/radioheadbear.gif") no-repeat center center fixed;
-}
+} */
 
 h1 {
     background-color: whitesmoke;

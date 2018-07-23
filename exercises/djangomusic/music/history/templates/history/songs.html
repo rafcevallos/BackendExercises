@@ -2,11 +2,15 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'history/songs.css' %}" />
 
-<body class = "artist_kendrick, artist_radiohead artist_jronk">
-<h1>{{ artist.artist_name }}</h1>
-<ul>
-    {% for songs in artist.songs_set.all %}
-    <li>{{ songs.song_text }}</li>
-    {% endfor %}
-</ul>
-</body>
+
+{% comment %} <div class="artist-{{ artist.songs_set.all}}"> {% endcomment %}
+    <h1>{{ artist.artist_name }}</h1>
+    <ul>
+        {% for songs in artist.songs_set.all %}
+        <li>{{ songs.song_text }}</li>
+        {% endfor %}
+    </ul>
+{% comment %} </div> {% endcomment %}
+
+
+{% comment %} -- template for a template --- "extends" -- Extending Python Templates {% endcomment %}
