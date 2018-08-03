@@ -1,0 +1,14 @@
+<h1>This is an Artist and some Songs They Recorded</h1>
+
+<h2>{{artist.name}}</h2>
+
+
+<h2>Some other songs {{artist.name}} is known for</h2>
+<ul>
+  {% comment %} loop over the artist's associated songs. So cool! {% endcomment %}
+  {% for song in artist.song_set.all %}
+    <li>
+      {{song.title}}, from the album {{song.album}}
+    </li>
+  {% endfor %}
+</ul>
