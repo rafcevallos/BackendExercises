@@ -5,6 +5,18 @@
       </form>
     {% endif %}
 
+    {% comment %} {% if nav_location == 'artists' %}
+      <form action="/history/artists/add" method='get'>
+        <input type="submit" value="Add An Artist">
+      </form>
+    {% endif %} {% endcomment %}
+
+    {% if nav_location != 'albums' %}
+    <form action="/history/albums" method='get'>
+      <input type="submit" value="View My Albums">
+    </form>
+  {% endif %}
+
     {% if nav_location != 'songs' %}
       <form action="/history/songs" method='get'>
         <input type="submit" value="View My Songs">

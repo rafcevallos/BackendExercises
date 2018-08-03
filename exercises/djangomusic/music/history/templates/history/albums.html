@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block main_stuff %}
+  <h1>These Are Albums from AlbumListTemplateView </h1>
+
+  <ul>
+    {% for album in view.album_list %}
+      <li>
+        <a href="{% url 'history:album_detail' album.id %}">{{album.title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock main_stuff %}

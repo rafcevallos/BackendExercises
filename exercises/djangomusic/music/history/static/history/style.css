@@ -4,9 +4,11 @@ body {
 }
 
 h1 {
-    color: yellow;
-    max-width: 11%;
-    border: 5px solid pink;
+    color: lightgreen;
+    background-color: darkmagenta;
+    max-width: 37%;
+    text-align: center;
+    border: 5px solid yellow;
     border-radius: 12px;
     padding: 2px;
 }

@@ -4,15 +4,22 @@
 
   {% include "history/nav_bar.html" with nav_location=location %}
 
-  <h1>These Are Made Up Singers from ArtistListView </h1>
+  <h1>These Are Made Up of Artists from ArtistListView </h1>
 
   <ul>
     {% for artist in artist_list %}
     <li>
-      <a href="{% url 'history:artist_detail' artist.id %}">{{artist.name}}</a>
+      <a href="{% url 'history:artist_detail' artist.id %}">{{artist.artist_name}}</a>
     </li>
     {% endfor %}
   </ul>
+
+  <form action="/history/artists/add" method='get'>
+    <input type="submit" value="Add An Artist">
+  </form>
+
 {% endblock main_stuff %}
+
+
 
 <!-- Decoupling is involved with 'history:artist_detail' -->

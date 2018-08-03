@@ -6,5 +6,5 @@
 {% block main_stuff %}
   {% comment %} Including nav_bar in each template so we can pass the location to it each time {% endcomment %}
   {% include "history/nav_bar.html" with nav_location=view.location %}
-  <img src="{% static 'history/images/jronk.gif' %}" alt="dire straits">
+  {% comment %} <img src="{% static 'history/images/jronk.gif' %}" alt="jronk"> {% endcomment %}
 {% endblock main_stuff %}

@@ -1,4 +1,4 @@
-<h1>This is an Artist and some Albums They Recorded</h1>
+<h1>These are songs from {{album.title}}</h1>
 
 <h2>{{artist.artist_name}}</h2>
 
@@ -6,13 +6,12 @@
 <h2>Some other albums {{artist.artist_name}} is known for</h2>
 <ul>
   {% comment %} loop over the artist's associated albums. So cool! {% endcomment %}
-  {% for album in artist.album_set.all %}
+  {% for album in artist.album_list.all %}
     <li>
-      {{album.title}} released by {{album.label}}.
+      {{album.title}}
     </li>
   {% endfor %}
 </ul>
-
 {% comment %} Button that takes you back home {% endcomment %}
 <form action="/history/" method='get'>
   <input type="submit" value="Home">

@@ -1,30 +1,14 @@
-from django.forms import forms
+from django import forms
 from .models import Artist, Album, Genre, Songs
 
 
-# Create the Artist form class
+# FORMS are used for USER input to add information to the Database
 class ArtistForm(forms.ModelForm):
     class Meta:
         model = Artist
         fields = ['artist_name']
 
-#  Creating a form to add an Artist
-form = ArtistForm()
-
-# Creaiing a form to change an existing Artist
-artist = Artist.objects.get(pk=1)
-form = ArtistForm(instance=artist)
-
-
-# Create the Album form class
-class AlbumForm(ModelForm):
+class AlbumForm(forms.ModelForm):
     class Meta:
         model = Album
-        fields = ['title', 'album_date', 'label', 'artist']
-
-#  Creating a form to add an Album
-form = AlbumForm()
-
-# Creaiing a form to change an existing Album
-album = Album.objects.get(pk=1)
-form = AlbumForm(instance=album)
+        fields = ['title', 'label', 'album_date']
