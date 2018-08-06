@@ -3,8 +3,7 @@ from django.shortcuts import get_object_or_404, render
 # from django.template import loader
 from django.views.generic import ListView, FormView, DetailView, CreateView, TemplateView
 from .models import Artist, Songs, Album, Genre
-from .forms import ArtistForm, AlbumForm, SongForm
-
+from .forms import ArtistForm, AlbumForm, SongForm, GenreForm
 
 class IndexView(TemplateView):
     template_name = 'history/index.html'
@@ -99,3 +98,34 @@ class SongFormView(FormView):
 
 class SongDetailView(DetailView):
     model = Songs
+
+
+# ===============================
+# GENRE Views
+class GenreListView(ListView):
+    model = Genre
+    context_object_name = 'genre_list' #this allows you to change object_list into a readable and easy to access variable from templates
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["location"] = "genres"
+        return context # A Context is a dictionary with variable names as the "key" and their values as the "value"
+
+
+class GenreFormView(FormView):
+    template_name = 'history/genre_form.html'
+    form_class = GenreForm
+    success_url = '/history/genres/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["location"] = "genres"
+        return context
+
+    def form_valid(self, form):
+        form.save()
+        return super(GenreFormView, self).form_valid(form)
+
+
+class GenreDetailView(DetailView):
+    model = Genre

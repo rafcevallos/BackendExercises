@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block main_stuff %}
+  <h1>These Are Genres from ArtistListTemplateView </h1>
+
+  <ul>
+    {% for genre in view.genre_list %}
+      <li>
+        <a href="{% url 'history:genre_detail' genre.id %}">{{genre.style}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock main_stuff %}

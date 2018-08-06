@@ -17,3 +17,8 @@ class SongForm(forms.ModelForm):
     class Meta:
         model = Songs
         fields = ['title',]
+
+class GenreForm(forms.ModelForm):
+    class Meta:
+        model = Genre
+        fields = ['style',]

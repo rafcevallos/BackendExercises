@@ -6,12 +6,12 @@
 <h2>by {{album.artist}}</h2>
 
 
-<h2>Some other albums {{artist.artist_name}} is known for</h2>
+{% comment %} <h2>Some other albums {{artist.artist_name}} is known for</h2> {% endcomment %}
 <ul>
   {% comment %} loop over the artist's associated albums. So cool! {% endcomment %}
-  {% for album in artist.album_list.all %}
+  {% for song in album.song_list.all %}
     <li>
-      {{album.title}}
+      <a href="{% url 'history:song_detail' song.id %}">{{song.title}}</a>
     </li>
   {% endfor %}
 </ul>
