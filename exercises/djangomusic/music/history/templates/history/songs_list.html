@@ -4,15 +4,22 @@
 
   {% include "history/nav_bar.html" with nav_location=location %}
 
-  <h1>These Are Albums from AlbumListView </h1>
+  <h1>These Are Songs From SongListView </h1>
 
   <ul>
-    {% for album in album_list %}
+    {% for song in song_list %}
     <li>
-      <a href="{% url 'history:album_detail' album.id %}">{{album.title}} by {{album.artist}}</a>
+      <a href="{% url 'history:song_detail' song.id %}">{{song.title}}</a>
     </li>
     {% endfor %}
   </ul>
+
+  <form action="/history/songs/add" method='get'>
+    <input type="submit" value="Add A Song">
+  </form>
+
 {% endblock main_stuff %}
+
+
 
 <!-- Decoupling is involved with 'history:artist_detail' -->

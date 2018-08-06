@@ -13,9 +13,8 @@ class Artist(models.Model):
 
 class Album(models.Model):
     title = models.CharField(default="", max_length=200)
-    album_date = models.DateField('Release Date')
+    album_date = models.DateField(auto_now=False, auto_now_add=False)
     label = models.CharField(default="", max_length=30)
-    # songs = models.ForeignKey(Songs, on_delete=models.CASCADE)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -27,6 +26,7 @@ class Genre(models.Model):
 
     def __str__(self):
         return "{0}".format(self.style)
+
 
 class Songs(models.Model):
     title = models.CharField(default="", max_length=100)

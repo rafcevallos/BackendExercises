@@ -1,6 +1,9 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'history/album.css' %}" />
+
 <h1>These are songs from {{album.title}}</h1>
 
-<h2>{{artist.artist_name}}</h2>
+<h2>by {{album.artist}}</h2>
 
 
 <h2>Some other albums {{artist.artist_name}} is known for</h2>
@@ -12,6 +15,10 @@
     </li>
   {% endfor %}
 </ul>
+{% comment %} Button that lets you add the remaining songs to the album {% endcomment %}
+<form action="/history/songs/add" method='get'>
+    <input type="submit" value="Add Songs">
+  </form>
 {% comment %} Button that takes you back home {% endcomment %}
 <form action="/history/" method='get'>
   <input type="submit" value="Home">

@@ -23,6 +23,12 @@
       </form>
     {% endif %}
 
+    {% comment %} {% if nav_location == 'albums' %}
+    <form action="/history/songs/add" method='get'>
+      <input type="submit" value="Add More Songs">
+    </form>
+  {% endif %} {% endcomment %}
+
     {% if nav_location != 'home' %}
       <form action="/history/" method='get'>
         <input type="submit" value="Home">

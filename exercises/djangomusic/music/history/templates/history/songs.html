@@ -2,15 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'history/songs.css' %}" />
 
+{% extends "index.html" %}
 
-{% comment %} <div class="artist-{{ artist.songs_set.all}}"> {% endcomment %}
-    <h1>{{ artist.artist_name }}</h1>
-    <ul>
-        {% for songs in artist.songs_set.all %}
-        <li>{{ songs.song_text }}</li>
-        {% endfor %}
-    </ul>
-{% comment %} </div> {% endcomment %}
+{% block main_stuff %}
+  <h1>These Are Songs from SongListTemplateView </h1>
 
-
-{% comment %} -- template for a template --- "extends" -- Extending Python Templates {% endcomment %}
+  <ul>
+    {% for song in view.song_list %}
+      <li>
+        <a href="{% url 'history:song_detail' song.id %}">{{song.title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock main_stuff %}

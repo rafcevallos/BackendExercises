@@ -15,5 +15,11 @@ urlpatterns = [
 # ALBUM PATHS
     path('albums/', views.AlbumListView.as_view(), name='albums'),
     path('albums/<int:pk>/', views.AlbumDetailView.as_view(), name='album_detail'),
-    path('albums/add/', views.AlbumFormView.as_view(), name='album_form')
+    path('albums/add/', views.AlbumFormView.as_view(), name='album_form'),
+
+##########
+# SONG PATHS
+    path('songs/', views.SongListView.as_view(), name='song_list'),
+    path('songs/<int:pk>/', views.SongDetailView.as_view(), name='song_detail'),
+    path('songs/add/', views.SongFormView.as_view(), name='song_form'),
 ]

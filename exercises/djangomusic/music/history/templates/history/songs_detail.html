@@ -1,0 +1,23 @@
+{% comment %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'history/artist.css' %}" /> {% endcomment %}
+
+<h1>These are Songs by {{songs.artist}}</h1>
+
+<h2>from the album "{{songs.album}}"</h2>
+
+<ul>
+  {% comment %} loop over the artist's associated albums. So cool! {% endcomment %} {% for song in song_list %}
+  <li>
+    {{songs.title}} -- {{songs.genre}}
+  </li>
+  {% endfor %}
+</ul>
+
+<form action="/history/songs/add" method='get'>
+  <input type="submit" value="Add A song">
+</form>
+
+{% comment %} Button that takes you back home {% endcomment %}
+<form action="/history/" method='get'>
+  <input type="submit" value="Home">
+</form>
